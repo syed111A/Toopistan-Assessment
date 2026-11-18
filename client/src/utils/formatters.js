@@ -9,6 +9,25 @@ export function formatDate(date) {
   }).format(parsedDate)
 }
 
+export function formatRegistrationDate(date) {
+  const isSupportedDate =
+    typeof date === 'string' || typeof date === 'number' || date instanceof Date
+  if (!isSupportedDate || date === '') {
+    return 'Date unavailable'
+  }
+
+  const parsedDate = new Date(date)
+  if (Number.isNaN(parsedDate.getTime())) {
+    return 'Date unavailable'
+  }
+
+  return new Intl.DateTimeFormat('en-PK', {
+    timeZone: 'Asia/Karachi',
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(parsedDate)
+}
+
 export function formatFee(fee) {
   const amount = Number(fee)
   if (!Number.isFinite(amount)) {

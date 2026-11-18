@@ -6,6 +6,7 @@ import Container from '../components/Container.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import usePageTitle from '../hooks/usePageTitle.js'
 import { getRegistrations } from '../services/api.js'
+import { formatRegistrationDate } from '../utils/formatters.js'
 
 function AdminDashboard() {
   const navigate = useNavigate()
@@ -175,12 +176,7 @@ function AdminDashboard() {
                           'Workshop no longer available'}
                       </td>
                       <td className="px-5 py-4 text-ink-700">
-                        {registration.createdAt
-                          ? new Intl.DateTimeFormat('en-PK', {
-                              dateStyle: 'medium',
-                              timeStyle: 'short',
-                            }).format(new Date(registration.createdAt))
-                          : 'Date unavailable'}
+                        {formatRegistrationDate(registration.createdAt)}
                       </td>
                     </tr>
                   ))}
