@@ -163,29 +163,6 @@ Example successful response:
 
 Open `http://localhost:5173/admin/login` and use the `ADMIN_EMAIL` and `ADMIN_PASSWORD` values from `server/.env`. There are no built-in default credentials. The server hashes the configured password at startup; never publish or commit real credentials.
 
-## Responsive design and testing
-
-The client uses responsive layouts and includes mobile navigation. See [TESTING.md](./TESTING.md) for the manual checklist, including registration, authentication, and responsive-width checks. Run the linters with `npm run lint` from both `client` and `server`.
-
-## AI usage disclosure
-
-AI-assisted development tools (**GitHub Copilot** and **Claude**) were used for planning and code generation. I reviewed and tested the implementation and can explain how it works.
-
-- Specific tools, tasks, and contributions: **[Add details]**
-- Review and testing performed: **[Add details]**
-
-## Live Demo
-
-[Add deployed URL]
-
-## Screenshots
-
-[Add screenshots]
-
-## Demo Video
-
-[Add demo video link]
-
 ## Credits
 
 - The TOOP logo and workshop images are stored locally in `client/public/images/`. Their original source and attribution are not recorded in the project; add credits here if required.
