@@ -29,9 +29,13 @@ async function startServer() {
   app.locals.adminEmail = process.env.ADMIN_EMAIL.trim().toLowerCase()
   app.locals.adminPasswordHash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
 
+  module.exports = app;
+
+if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}.`)
-  })
+    console.log(`Server running on ${PORT}`);
+  });
+}
 }
 
 startServer().catch((error) => {
